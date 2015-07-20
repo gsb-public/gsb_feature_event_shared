@@ -176,6 +176,26 @@ admission_event|default';
   );
   $export['event_location_link'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'find_local_time';
+  $ds_field->label = 'Find local time link';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'admission_event|default
+event|default
+';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<span class="pipe">|</span><a class="find-time" href="http://timeanddate.com/worldclock/converter.html" target="_blank">Find local time</a>',
+      'format' => 'gsb_html_text',
+    ),
+    'use_token' => 0,
+  );
+  $export['find_local_time'] = $ds_field;
+
   return $export;
 }
 
