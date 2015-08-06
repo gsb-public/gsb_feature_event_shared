@@ -206,7 +206,7 @@ admission_event|default';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div class="location-teaser">[node:gsb-event-location:teaser]</div>
-<div class="location-anchor"><a href="#full-location">See full location</a></div>',
+<div class="location-anchor"><a href="#full-location">See all location details</a></div>',
       'format' => 'gsb_html_text',
     ),
     'use_token' => 1,
