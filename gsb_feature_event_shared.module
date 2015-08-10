@@ -5,3 +5,19 @@
  */
 
 include_once 'gsb_feature_event_shared.features.inc';
+
+/**
+ * Implements hook_node_view().
+ */
+function gsb_feature_event_shared_node_view_alter(&$build) {
+  if ($build['#node']->type == 'event' || $build['#node']->type == 'admission_event') {
+    if (count($build['field_event_speakers']['#items']) <= 1) {
+      $speaker_entity_id = $build['field_event_speakers']['#items'][0]['value'];
+      $speaker_entity = $build['field_event_speakers'][0]['entity']['field_collection_item'][$speaker_entity_id];
+      if (empty($speaker_entity['#entity']->field_person_ref) && empty($speaker_entity['#entity']->field_first_name)
+          && empty($speaker_entity['#entity']->field_last_name)) {
+        $build['field_event_speakers']['#access'] = FALSE;
+      }
+    }
+  }
+}
