@@ -21,3 +21,18 @@ function gsb_feature_event_shared_node_view_alter(&$build) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gsb_feature_event_shared_form_node_form_alter(&$form, &$form_state) {
+  if ($form['#bundle'] == 'event' || $form['#bundle']  == 'admission_event') {
+    foreach($form['field_event_location']['und'] as $key) {
+      if (is_numeric($key) && $key >= 0) {
+        // Make street address and zip code NOT required
+        $form['field_event_location']['und'][$key]['field_address']['und'][0]['street_block']['thoroughfare']['#required'] = FALSE;
+        $form['field_event_location']['und'][$key]['field_address']['und'][0]['locality_block']['postal_code']['#required'] = FALSE;
+      }
+    }
+  }
+}
