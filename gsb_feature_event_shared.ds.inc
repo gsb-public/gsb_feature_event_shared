@@ -222,8 +222,7 @@ admission_event|default';
     'node' => 'node',
   );
   $ds_field->ui_limit = 'admission_event|default
-event|default
-';
+event|default';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<span class="pipe">|</span><a class="find-time" href="http://timeanddate.com/worldclock/converter.html" target="_blank">Find local time</a>',
