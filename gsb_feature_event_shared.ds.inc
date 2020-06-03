@@ -70,7 +70,7 @@ function gsb_feature_event_shared_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'prefix' => '<span class="pipe">|</span>',
+          'prefix' => '<span class="pipe">| Local time in</span>',
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => '',
@@ -300,6 +300,7 @@ function gsb_feature_event_shared_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['field_collection_item|field_event_location|teaser'] = $ds_layout;
 
