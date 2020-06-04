@@ -70,7 +70,7 @@ function gsb_feature_event_shared_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'prefix' => '<span class="pipe">| Local time in</span>',
+          'prefix' => '<span class="pipe">| </span>',
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => '',
